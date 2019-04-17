@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: greeva-gateway
+  cloud:
+    config:
+      uri: http://localhost:8888
+  profiles:
+    active: composite
+
+server:
+  port: 7777

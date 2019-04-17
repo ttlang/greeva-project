@@ -1,0 +1,15 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+      routes:
+        - id: member-service
+          uri: lb://member-service/
+          predicates:
+            - Path= /member-service/**
